@@ -10,6 +10,10 @@
   * An install script *should* never leave any background process and should always be blocking. This is because, once an install script exits, bnr's install script looks for an exit value to determine whether the operation was successful or not. Locking any resource or leaving background processes can interfere with other install scripts.
   * An install script *should* carry out all of the steps in installation without any user intervention. (Ex: accepting a license agreement, typing a password). This should be handled by the install script itself as install scripts executed inside a sub-shell and the user can't interact with the running script.
   * All messages output by the install script to STDIN or STDERR is retained by bnr's install script for use in logging. Hence, additional error messages are encouraged and there needn't be any separate logging at the script level.
+  * It is strongly recommended to test the scripts on a fresh install of the Ubuntu version it is intended to work in.
+  
+## Versioning ##
+  Stable versions are organized along the line of Ubuntu's version number. Ex: 16.04 etc.
   
 ## LICENSE ##
 
