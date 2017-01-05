@@ -13,7 +13,7 @@
   * It is strongly recommended to test the scripts on a fresh install of the Ubuntu version it is intended to work in.
   
 ## Versioning ##
-  Stable versions are organized along the line of Ubuntu's version number. Ex: 16.04 etc.
+  Stable versions are organized along the lines of Ubuntu's version number. Ex: 16.04 etc.
   
 ## LICENSE ##
 
