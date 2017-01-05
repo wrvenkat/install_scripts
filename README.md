@@ -2,7 +2,7 @@
   This repository contains the scripts that are used to install softwares listed in the [ibnr-conf](https://github.com/wrvenkat/ibnr-conf) file. The scripts are called by the install script based on this config file.
   
 ## Getting Started and Contributing ##
-  The scripts in this folder install one software. They may or may not install software from source. A script is the only solution when a simpla add PPA, refresh and install does not do the job.
+  The scripts in this folder install one software. They may or may not install software from source. A script is the only solution when a simple, add PPA, refresh and install flow does not do the job.
   
 #### Conventions and guidelines for creating an install script####
   * An install script that installs software `foo-bar` *should* be named as `foo-bar-install.sh` and a corresponding entry added to the [ibnr-conf](https://github.com/wrvenkat/ibnr-conf) config file.
