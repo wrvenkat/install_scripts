@@ -11,7 +11,7 @@ NVIDIA_STABLE_LATEST=361
 bus_line=$(lspci | egrep 'VGA|3D' | grep NVIDIA)
 if [ -z "$bus_line" ]; then
     printf "No nVidia card detected. Exiting\n"
-    exit 0;
+    exit 1
 fi
 
 #install the latest driver if no nVidia driver was installed
