@@ -1,4 +1,0 @@
-[submodule "test"]
-	path = test
-	url = https://github.com/wrvenkat/install_scripts.git
-	branch = 14.04-test
