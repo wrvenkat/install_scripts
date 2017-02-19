@@ -3,7 +3,7 @@
 #Install chrome
 
 if wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -; then
-    if ! [ -a "/etc/apt/sources.list.d/google.list" ] || [ $(cat /etc/apt/sources.list.d/google.list | grep http://dl.google.com/linux/chrome/deb/ | wc -l) -eq 0 ]; then
+    if ! [ -a "/etc/apt/sources.list.d/google.list" ] || ! grep -q http://dl.google.com/linux/chrome/deb/ /etc/apt/sources.list.d/*; then
 	if sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'; then
 	    :
 	else
