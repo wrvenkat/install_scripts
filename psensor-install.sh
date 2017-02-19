@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #This script installs psensor
-PSENSOR_DEPENDENCIES="libsensors4-dev libgtk-3-dev libnotify-dev libappindicator3-dev libxnvctrl-dev libjson-c-dev libunity-dev libatasmart-dev libudisks2-dev help2man"
+PSENSOR_DEPENDENCIES="libsensors4-dev libgtk-3-dev libnotify-dev libappindicator3-dev libxnvctrl-dev libxnvctrl0 libjson-c-dev libunity-dev libatasmart-dev libudisks2-dev help2man"
 
 detect_sensors(){
     if sudo apt-get install -y lm-sensors; then
