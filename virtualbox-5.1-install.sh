@@ -18,11 +18,11 @@ if [ -z "$release" ]; then
 fi
 
 printf "Installing any pending updates\n"
-yes | sudo apt-get upgrade
+sudo apt-get upgrade -y --allow-unauthenticated
 
 printf "Installing dependencies - dkms libqt5x11extras5 libsdl1.2debian ...\n"
 
-if sudo apt-get install dkms && sudo apt-get install libqt5x11extras5 libsdl1.2debian; then
+if sudo apt-get install -y --allow-unauthenticated dkms && sudo apt-get install -y --allow-unauthenticated libqt5x11extras5 libsdl1.2debian; then
     printf "Done\n"
     if [ $(cat /etc/apt/sources.list | grep virtualbox | wc -l) -eq 0 ]; then
 	printf "Adding VirtualBox repository...."
@@ -42,7 +42,7 @@ if sudo apt-get install dkms && sudo apt-get install libqt5x11extras5 libsdl1.2d
     fi
     printf "Refreshing repository....\n"
     sudo apt-get update;
-    if sudo apt-get install -y virtualbox-5.1; then
+    if sudo apt-get install -y --allow-unauthenticated virtualbox-5.1; then
 	printf "VirtualBox 5.1 installed\n"
 	exit 0
     else

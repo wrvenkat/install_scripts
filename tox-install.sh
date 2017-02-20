@@ -21,7 +21,7 @@ else
     fi
 fi
 sudo apt-get update
-if ! sudo apt-get install -y qtox; then
+if ! sudo apt-get install -y --allow-unauthenticated qtox; then
     printf "Error installing qtox.\n"
     exit 1
 fi
