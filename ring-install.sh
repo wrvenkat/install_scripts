@@ -19,7 +19,7 @@ else
     fi
 fi
 sudo apt-get update
-if ! sudo apt-get install -y ring; then
+if ! sudo apt-get install -y --allow-unauthenticated ring; then
     printf "Failed to install ring.\n"
     exit 1
 fi

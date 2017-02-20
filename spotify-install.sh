@@ -9,14 +9,14 @@ if [ $(ls /etc/apt/sources.list.d/ | grep spotify | wc -l) -eq 0 ]; then
 	printf "Refreshing repository...."
 	status=$(sudo apt-get update)
     else
-	printf "Failed to add spotify. Please consult Spotify website."
-	return 1
+	printf "Failed to add spotify. Please consult Spotify website.\n"
+	exit 1
     fi
 fi
 printf "Installing Spotify..."
-if yes | sudo apt-get install spotify-client; then
+if sudo apt-get install -y --allow-unauthenticated spotify-client; then
     : #printf "Done\n"
 else
-    printf "Failed to install Spotify. Please consult Spotify website."
+    printf "Failed to install Spotify. Please consult Spotify website.\n"
     exit 1
 fi
