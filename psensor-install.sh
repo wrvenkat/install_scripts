@@ -4,7 +4,7 @@
 PSENSOR_DEPENDENCIES="libsensors4-dev libgtk-3-dev libnotify-dev libappindicator3-dev libxnvctrl-dev libxnvctrl0 libjson-c-dev libunity-dev libatasmart-dev libudisks2-dev help2man"
 
 detect_sensors(){
-    if sudo apt-get install -y lm-sensors; then
+    if sudo apt-get install -y --allow-unauthenticated lm-sensors; then
 	if yes | sudo sensors-detect; then
 	    return 0
 	else
@@ -23,7 +23,7 @@ psensor_install(){
 	#first detect and create the sensors config
 	if detect_sensors; then
 	   sudo apt-get update
-	   if sudo apt-get install psensor; then
+	   if sudo apt-get install -y --allow-unauthenticated psensor; then
 	       return 0
 	   else
 	       return 1
@@ -38,7 +38,7 @@ psensor_install(){
 	cd "git repo/psensor"
 	local latestTag=$(git describe --tags $(git rev-list --tags --max-count=1))
 	git checkout "$latestTag"
-	if yes | sudo apt-get install -y --allow-unauthenticated $PSENSOR_DEPENDENCIES; then
+	if sudo apt-get install -y --allow-unauthenticated $PSENSOR_DEPENDENCIES; then
 	    if ./configure && make && sudo make install; then
 		sudo apt-get remove -y $PSENSOR_DEPENDENCIES
 		return 0

@@ -21,7 +21,7 @@ else
     fi
 fi
 sudo apt-get update
-if ! sudo apt-get install -y riot-web; then
+if ! sudo apt-get install -y --allow-unauthenticated riot-web; then
     printf "Error installing riot-web.\n"
     exit 1
 fi
