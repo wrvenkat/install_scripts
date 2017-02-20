@@ -18,7 +18,7 @@ else
     fi
 fi
 sudo apt-get update
-if ! sudo apt-get install -y jitsi; then
+if ! sudo apt-get install -y --allow-unauthenticated jitsi; then
     printf "Error installing jitsi.\n"
     exit 1
 fi
