@@ -16,7 +16,7 @@ latestTag=$(git describe --tags $(git rev-list --tags --max-count=1))
 if [ -n "$latestTag" ]; then
     git checkout "$latestTag"
     printf "Installing dependencies...\n"
-    if yes | sudo apt-get install -y $REDSHIFT_DEPENDENCIES python3; then
+    if sudo apt-get install -y --allow-unauthenticated $REDSHIFT_DEPENDENCIES python3; then
 	printf "Building redshift..."
 	if ./bootstrap && ./configure $CONFIG_OPTIONS && make; then
 	    printf "Installing Redshift...\n"

@@ -15,7 +15,7 @@ fi
 
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt-get update
-if ! sudo apt-get install -y scudcloud; then
+if ! sudo apt-get install -y --allow-unauthenticated scudcloud; then
     printf "Error installing scudcloud. Exiting\n"
     exit 1
 fi
