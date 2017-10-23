@@ -8,6 +8,7 @@ REPO_FILE_NAME="noobslab-ubuntu-themes-"
 REPO_LOC="/etc/apt/sources.list.d"
 REPO_STR="/noobslab/themes"
 THEME_NAME="Arc-Dark"
+INSTALL_NAME="arc-theme"
 
 #get the release
 index=0
@@ -39,7 +40,7 @@ retVal=$(sudo apt-get update 2>&1)
 retVal=1
 if [ "$retVal" -eq 1 ]; then
     printf "Installing theme..."
-    msg=$(sudo apt-get install -y --allow-unauthenticated ambiance-dark-red 2>&1)
+    msg=$(sudo apt-get install -y --allow-unauthenticated "$INSTALL_NAME" 2>&1)
     retVal=$?
     if [ "$retVal" -eq 0 ]; then
 	#printf " Done\n"
