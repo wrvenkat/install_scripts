@@ -7,7 +7,7 @@ ADR_RELEASE='trusty'
 REPO_FILE_NAME="noobslab-ubuntu-themes-"
 REPO_LOC="/etc/apt/sources.list.d"
 REPO_STR="/noobslab/themes"
-THEME_NAME="Ambiance-Dark-Red"
+THEME_NAME="Arc-Dark"
 
 #get the release
 index=0
