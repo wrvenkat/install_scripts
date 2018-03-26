@@ -31,7 +31,7 @@ if ! tar -xvf "$target_dir"jtool.tar --directory "$target_dir"jtool/; then
 fi
 
 #rename and move to /bin.
-if ! (cd "$target_dir"jtool && mv "$target_dir"jtool "$target_dir"jtool1 && mv "$target_dir"jtool.ELF64 "$target_dir"jtool && sudo cp "$target_dir"jtool /bin/); then
+if ! (cd "$target_dir"jtool/ && mv "$target_dir"jtool/jtool "$target_dir"jtool/jtool1 && mv "$target_dir"jtool/jtool.ELF64 "$target_dir"jtool/jtool && sudo cp "$target_dir"jtool/jtool /bin/); then
     printf "Failed to copy to /bin. Exiting\n"
     exit 1
 fi
