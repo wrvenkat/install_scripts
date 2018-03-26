@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if ! sudo apt-get update; then
-    printf "Report update failed. Exiting\n"
-    exit 1
-fi
+sudo apt-get update
 
 #allow non-root for wireshark by setting debconf selections
 if ! echo wireshark-common wireshark-common/install-setuid select true | sudo debconf-set-selections; then
