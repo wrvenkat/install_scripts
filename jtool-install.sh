@@ -14,20 +14,23 @@ if ! type ; then
 fi
 
 #download
-if ! wget -q "$URL" -o jtool.tar; then
+if ! wget -q "$URL" -O ~/Downloads/jtool.tar; then
     printf "jtoll download failed. Exiting.\n"
     exit 1    
 fi
 
 #extract jtool
-mkdir jtool
-if ! tar -xvf jtool.tar --directory jtool/; then
+if ! [ -d ~/Downloads/jtool/ ]; then
+    mkdir ~/Downloads/jtool;
+fi
+
+if ! tar -xvf ~/Downloads/jtool.tar --directory ~/Downloads/jtool/; then
     printf "jtool extract failed. Exiting\n";
     exit 1
 fi
 
 #rename and move to /bin.
-if ! cd jtool && mv jtool jtool1 && mv jtool.ELF64 jtool && sudo cp jtool /bin/; then
+if ! (cd ~/Downloads/jtool && mv ~/Downloads/jtool ~/Downloads/jtool1 && mv ~/Downloads/jtool.ELF64 ~/Downloads/jtool && sudo cp ~/Downloads/jtool /bin/); then
     printf "Failed to copy to /bin. Exiting\n"
     exit 1
 fi
